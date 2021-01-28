@@ -1,6 +1,9 @@
+html {
+    background-color: #f0f0f0;
+}
 #app {
     font-family: Gerb;
-    background-color: #f0f0f0;
+    
 }
 
 .home {
@@ -11,11 +14,16 @@
 .title {
     grid-column: 1;
     grid-row: 1;
+    padding: 20px;
 }
 .title-list {
     list-style-type: none;
     grid-column: 1;
     grid-row: 2;
+    font-weight: bold;
+    margin-left: 20px;
+   
+    
 }
 .login {
     display: grid;

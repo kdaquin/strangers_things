@@ -1,13 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import {Home} from './components';
+import {Landing} from './components';
 
 
 
 const App = () => {
   return (
     <div>
-  <Home />
+  <Landing />
   </div>
   )
 };
