@@ -1,4 +1,11 @@
 import React from 'react';
+import {
+    BrowserRouter as Router,
+    Switch,
+    Route,
+    Link
+  } from "react-router-dom";
+import NavBar from './NavBar';
 
 
 const LoginWindow = () => {
@@ -16,7 +23,11 @@ return (
         </input>
         <button class="login-button">Login</button>
         <p class ="login-pTag">or</p>
-        <button class="login-sign-up-button">Sign up</button>
+        <button 
+            class="login-sign-up-button"
+            onClick={console.log('boop')}>
+            Sign up
+        </button>
         
         </div>
 )
@@ -33,7 +44,9 @@ return (
 
 const Landing = () => {
  return (
+   
     <div class="home">
+         <NavBar />
         <h1 class="title"> 
             Stranger's Things
         </h1>
