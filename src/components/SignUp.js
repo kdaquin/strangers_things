@@ -17,7 +17,6 @@ const SignUp = () => {
             </input>
 
 
-
         </div>
     )
 
