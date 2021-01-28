@@ -1,26 +1,26 @@
-import React from 'react'
+// import React from 'react'
 
-const SignUp = () => {
-    return (
-        <div class ="sign-up">
-            <input type="text"
-                placeholder="First Name">
-            </input>
-            <input type="text"
-                placeholder="Last Name">
-            </input>
-            <input type="text"
-                placeholder="Username">
-            </input>
-            <input type="text"
-                placeholder="Password">
-            </input>
+// const SignUp = () => {
+//     return (
+//         <div class ="sign-up">
+//             <input type="text"
+//                 placeholder="First Name">
+//             </input>
+//             <input type="text"
+//                 placeholder="Last Name">
+//             </input>
+//             <input type="text"
+//                 placeholder="Username">
+//             </input>
+//             <input type="text"
+//                 placeholder="Password">
+//             </input>
 
 
 
-        </div>
-    )
+//         </div>
+//     )
 
-}
+// }
 
-export default SignUp;
+// export default SignUp;
