@@ -6,8 +6,12 @@ import {
   Route,
   Link
 } from "react-router-dom";
-import {Landing} from './components';
-import {NavBar, Home} from './components';
+import {
+  CreatePost, 
+  Landing, 
+  Profile,
+  Home} from './components';
+
 
 
 
@@ -20,9 +24,16 @@ const App = () => {
         <Route path="/home">
         <Home />
         </Route>
-          <Route path="/">
-        <Landing />
+        <Route path ='/createpost'>
+          <CreatePost />
         </Route>
+        <Route path ='/profile'>
+          <Profile />
+        </Route>
+          <Route path="/">
+        <Landing/>
+        </Route>
+       
         </Switch>
       </div>
       </Router>

@@ -10,21 +10,21 @@ import NavBar from './NavBar';
 
 const LoginWindow = () => {
 return (
-    <div class="login">
+    <div className="login">
         
-        <input class="login-email-input"
+        <input className="login-email-input"
                 type="text"
                 placeholder="Email or Username">
         </input>
         
-        <input class ="login-password-input"
+        <input className ="login-password-input"
                 type="text"
                 placeholder="password">
         </input>
-        <button class="login-button">Login</button>
-        <p class ="login-pTag">or</p>
+        <button className="login-button">Login</button>
+        <p className ="login-pTag">or</p>
         <button 
-            class="login-sign-up-button"
+            className="login-sign-up-button"
             onClick={console.log('boop')}>
             Sign up
         </button>
@@ -45,12 +45,12 @@ return (
 const Landing = () => {
  return (
    
-    <div class="home">
+    <div className="landing">
          <NavBar />
-        <h1 class="title"> 
+        <h1 className="title"> 
             Stranger's Things
         </h1>
-        <ul class="title-list">
+        <ul className="title-list">
             <li>Buy/Sell Items right away</li>
             <li>Post or Find job oppurtunities</li>
             <li>Connect with thousands of users</li>
