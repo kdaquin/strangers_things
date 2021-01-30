@@ -25,17 +25,45 @@ return (
         <p class ="login-pTag">or</p>
         <button 
             class="login-sign-up-button"
-            onClick={console.log('boop')}>
-            Sign up
+            onClick={<SignUp />}>
+            Sign up!
         </button>
         
-        </div>
-)
 
+        
+
+        </div>
+    
+
+)
 
 }
 
-
+const SignUp = () => {
+    return (
+    <div id="myModal" class="modal">
+    <input class="signup-first-input"
+        type="text"
+        placeholder="FirstName">
+    </input>
+    <input class="signup-last-input"
+        type="text"
+        placeholder="LastName">
+    </input>
+    <input class="signup-email-input"
+        type="text"
+        placeholder="Email">
+    </input>
+    <input class="signup-password-input"
+        type="text"
+        placeholder="Password">
+    </input>
+    {/* <input type="checkbox" id="above18" value="Are you 18 years of age?">
+  <label for="vehicle1"> I Am 18</label><br></br> */}
+    <button class= 'register-button'>Register</button>
+</div>
+    )
+}
 
 
 
@@ -56,6 +84,8 @@ const Landing = () => {
             <li>Connect with thousands of users</li>
         </ul>
         <LoginWindow />
+        {/* {<SignUp /> } */}
+
     </div>
  )
 }
