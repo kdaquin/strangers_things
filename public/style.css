@@ -117,6 +117,7 @@ html {
     grid-template-rows: 0.3fr 0.7fr 3.1fr;
     box-sizing: border-box;
     border: 1px solid black;
+    height: 10%
     
 }
 .posts-title {
@@ -148,6 +149,6 @@ html {
     grid-template-rows: 2.1fr;
     gap: 0px 8px;
 }
-.post-hr {
-
+.profile-nav-bar {
+    display: flex;
 }

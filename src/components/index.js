@@ -6,3 +6,7 @@ export {default as Profile} from './Profile';
 export {default as CreatePost} from './CreatePost';
 export {default as Title} from './Title';
 export {default as Posts} from './Post';
+export {default as ProfileNavBar} from './ProfileNavBar';
+export {default as SavedPost} from './ProfileSavedPost';
+export {default as DirectMessages} from './ProfileDirectMessages';
+export {default as ProfilePosts} from './ProfilePosts';
