@@ -1,14 +1,27 @@
-import React from 'react';
+import {React, useState} from 'react';
 import {
     BrowserRouter as Router,
     Switch,
     Route,
-    Link
+    Link,
+    Redirect
   } from "react-router-dom";
 import NavBar from './NavBar';
 
 
 const LoginWindow = () => {
+    const [submittedSucessful, setSubmittedSuccessful] = useState(false)
+    function authenticate(event) {
+        ///check that the user entered stuff first.
+        // ajax request to backend
+        // backend response will say authenticated or not/
+        event.preventDefault()
+        console.log('submitted the form')
+        setSubmittedSuccessful(true)
+    }
+if (submittedSucessful) {
+    return <Redirect to="/home"/>
+}
 return (
     <div className="login">
         
@@ -21,14 +34,17 @@ return (
                 type="text"
                 placeholder="password">
         </input>
-        <button className="login-button">Login</button>
+        <button className="login-button"
+                onClick={authenticate}>
+                Login
+        </button>
         <p className ="login-pTag">or</p>
         <button 
             className="login-sign-up-button"
             onClick={console.log('boop')}>
             Sign up
         </button>
-        
+    
         </div>
 )
 
@@ -36,17 +52,11 @@ return (
 }
 
 
-
-
-
-
-
-
 const Landing = () => {
  return (
    
     <div className="landing">
-         <NavBar />
+        
         <h1 className="title"> 
             Stranger's Things
         </h1>
