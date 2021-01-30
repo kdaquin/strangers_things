@@ -98,17 +98,17 @@ html {
 
 #myModal{
     display: grid;
-    flex-direction: column;
-    justify-content: center;
-    border: solid black;
-    width: 300px;
-    height: 200px;
-    border-radius: 20px;
-    padding: 10px;
-    background-color: white;
-    position: absolute;
-    left: 28%;
-    top: 56%;
+flex-direction: column;
+justify-content: center;
+border: solid black;
+width: 300px;
+height: 200px;
+border-radius: 20px;
+padding: 10px;
+background-color: white;
+position: absolute;
+left: 28%;
+top: 56%;
 
 }
 
@@ -191,9 +191,9 @@ html {
   border: 2px solid black;
   text-align: center;
 }
-.home {
+/* .home {
    
-}
+} */
 .home-main {
     display: grid;
     grid-template-columns: 0.5fr 1.5fr;

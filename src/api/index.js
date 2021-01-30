@@ -12,6 +12,3 @@ fetch('https://strangers-things.herokuapp.com/api/COHORT-NAME/posts', {
   
   })
 })
-
-
-

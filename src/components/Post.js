@@ -1,6 +1,19 @@
-import React from 'react';
+import {React, useEffect} from 'react';
 
 const Posts = () => {
+    let callState = function () {
+        useEffect(() => {
+        fetch('https://strangers-things.herokuapp.com/api/2010-LSU-RM-WEB-PT/posts')
+          .then(response => response.json())
+          .then(result => {
+            console.log(result);
+            
+          })
+        }, [])
+        
+        }
+        callState()
+    
     return (
         <div >
             <div className="posts">
