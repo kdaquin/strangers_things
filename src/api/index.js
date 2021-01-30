@@ -7,5 +7,11 @@ fetch('https://strangers-things.herokuapp.com/api/COHORT-NAME/posts', {
     'Content-Type': 'application/json',
     'Authorization': 'Bearer TOKEN_STRING_HERE'
   },
-  body: JSON.stringify({ /* whatever things you need to send to the API */ })
+  body: JSON.stringify({ /* whatever things you need to send to the API */ 
+  
+  
+  })
 })
+
+
+

@@ -95,21 +95,20 @@ html {
     width: 300px;
     height: 300px;
 }
-<<<<<<< HEAD
 
 #myModal{
-display: grid;
-flex-direction: column;
-justify-content: center;
-border: solid black;
-width: 300px;
-height: 200px;
-border-radius: 20px;
-padding: 10px;
-background-color: white;
-position: absolute;
-left: 28%;
-top: 56%;
+    display: grid;
+    flex-direction: column;
+    justify-content: center;
+    border: solid black;
+    width: 300px;
+    height: 200px;
+    border-radius: 20px;
+    padding: 10px;
+    background-color: white;
+    position: absolute;
+    left: 28%;
+    top: 56%;
 
 }
 
@@ -146,7 +145,7 @@ top: 56%;
     grid-row: 4;
     border-radius: 10px;
     cursor: pointer;
-=======
+}
 .nav-bar {
     display: flex;
     justify-content: space-around;
@@ -203,5 +202,4 @@ top: 56%;
 }
 .profile-nav-bar {
     display: flex;
->>>>>>> 804a02e8ab5c305559c6f4de0f7dd2b1fb796cc9
 }

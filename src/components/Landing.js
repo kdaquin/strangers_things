@@ -40,8 +40,9 @@ return (
         </button>
         <p className ="login-pTag">or</p>
         <button 
-            class="login-sign-up-button"
-            onClick={<SignUp />}>
+            className="login-sign-up-button"
+            // onClick={<SignUp />}
+            >
             Sign up!
         </button>
         
@@ -57,26 +58,26 @@ return (
 
 const SignUp = () => {
     return (
-    <div id="myModal" class="modal">
-    <input class="signup-first-input"
+    <div id="myModal" className="modal">
+    <input className="signup-first-input"
         type="text"
         placeholder="FirstName">
     </input>
-    <input class="signup-last-input"
+    <input className="signup-last-input"
         type="text"
         placeholder="LastName">
     </input>
-    <input class="signup-email-input"
+    <input className="signup-email-input"
         type="text"
         placeholder="Email">
     </input>
-    <input class="signup-password-input"
+    <input className="signup-password-input"
         type="text"
         placeholder="Password">
     </input>
     {/* <input type="checkbox" id="above18" value="Are you 18 years of age?">
   <label for="vehicle1"> I Am 18</label><br></br> */}
-    <button class= 'register-button'>Register</button>
+    <button className= 'register-button'>Register</button>
 </div>
     )
 }
