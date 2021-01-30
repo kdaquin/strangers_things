@@ -1,15 +1,12 @@
 import React from 'react';
 
+const DirectMessages = () => {
 
-const Home = () => {
     return (
         <div>
             Hello
         </div>
     )
-
-
-
 }
 
-export default Home;
+export default DirectMessages;

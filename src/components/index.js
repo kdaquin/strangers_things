@@ -1,4 +1,12 @@
 export {default as Landing} from './Landing';
-export {default as Home} from './Home';
+export {default as Home} from './Pages/Home';
 export {default as NavBar} from './NavBar';
 export {default as SignUp} from './SignUp';
+export {default as Profile} from './Pages/Profile';
+export {default as CreatePost} from './Pages/CreatePost';
+export {default as Title} from './Title';
+export {default as Posts} from './Post';
+export {default as ProfileNavBar} from './Pages/ProfileNestPage/ProfileNavBar';
+export {default as SavedPost} from './Pages/ProfileNestPage/ProfileSavedPost';
+export {default as DirectMessages} from './Pages/ProfileNestPage/ProfileDirectMessages';
+export {default as ProfilePosts} from './Pages/ProfileNestPage/ProfilePosts';
