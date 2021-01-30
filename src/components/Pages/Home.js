@@ -1,6 +1,6 @@
 import React from 'react';
-import Title from './Title';
-import Post from './Post';
+import Title from '../Title';
+import Post from '../Post';
 const CategorySection = () => {
     return (
         <div className="category-section">

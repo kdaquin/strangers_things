@@ -5,9 +5,9 @@ import {
     Link
   } from "react-router-dom";
 import React from "react";
-import Title from './Title';
-import Post from './Post';
-import ProfileNavBar from './ProfileNavBar';
+import Title from '../Title';
+import Post from '../Post';
+import ProfileNavBar from './ProfileNestPage/ProfileNavBar';
 
 const Profile = () => {
 
