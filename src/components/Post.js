@@ -15,9 +15,24 @@ const Posts = () => {
     return (
         <div>
             {
-                posts.map(post=><div key ={post.id}>{post.title}</div>)
+                posts.map((post, index)=>
+                    <div className="posts"
+                        key ={index}>
+                             <h2 className="posts-title">
+                                  {post.title}
+                            </h2>
+                            <p className="posts-description"> 
+                                {post.description}
+                            </p>
+                            <h3 className="post-username">{post.author.username}</h3>
+                            <p className="post-price"> 
+                                {post.price}
+                            </p>
+                            <p className="post-location">{post.location}</p>
+
+                    </div>)
             }
-            <div className="posts">
+            {/* <div className="posts">
             <h2 className="posts-title">
                 PlaceHolder Title
             </h2>
@@ -28,7 +43,7 @@ const Posts = () => {
                 src="https://picsum.photos/200/300" 
                 alt="placeholder-example">
             </img>
-            </div>
+            </div> */}
           
 
         </div>

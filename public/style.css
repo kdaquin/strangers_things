@@ -186,19 +186,12 @@ top: 56%;
     width: 150px;
     margin-left: 2px;
 }
-.category-section {
-  box-sizing: border-box;
-  border: 2px solid black;
-  text-align: center;
-}
+
 /* .home {
    
 } */
 .home-main {
-    display: grid;
-    grid-template-columns: 0.5fr 1.5fr;
-    grid-template-rows: 2.1fr;
-    gap: 0px 8px;
+   
 }
 .profile-nav-bar {
     display: flex;
