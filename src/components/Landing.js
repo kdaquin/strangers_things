@@ -1,4 +1,4 @@
-import {React, useState} from 'react';
+import {React, useState, useEffect} from 'react';
 import {
     BrowserRouter as Router,
     Switch,
@@ -88,6 +88,8 @@ const SignUp = () => {
 
 
 const Landing = () => {
+  
+       
  return (
    
     <div className="landing">
