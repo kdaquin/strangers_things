@@ -1,29 +1,7 @@
 import {React, useEffect, useState} from 'react';
 
 const Posts = () => {
-    let callState = function () {
-        // useEffect(() => {
-        // fetch('https://strangers-things.herokuapp.com/api/2010-LSU-RM-WEB-PT/posts')
-        //   .then(response => response.json())
-        //   .then(result => {
-        //     // console.log(result);
-        //     let data = result.data.posts
-        //     // console.log(result.data.posts[0].description)
-        //     // result.data.posts.map(x => console.log(x) )
-        //     for (var i = 0; data.length > i; i++){
-        //         console.log(data[i])
-        //         return (
-        //             <div className='sneaky'>
-        //             </div>
-        //         )
-        //     }
-            
-        //   })
-        // }, [])
 
-
-        }
-        // callState()
     const [posts,setPosts] = useState([]);
      useEffect( async () => {
             const response = await fetch('https://strangers-things.herokuapp.com/api/2010-LSU-RM-WEB-PT/posts')

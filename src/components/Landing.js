@@ -15,6 +15,30 @@ const LoginWindow = () => {
         ///check that the user entered stuff first.
         // ajax request to backend
         // backend response will say authenticated or not/
+        
+        
+        
+        
+        fetch('https://strangers-things.herokuapp.com/api/COHORT-NAME/users/register', {
+            method: "POST",
+            headers: {
+              'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+              user: {
+                username: 'superman27',
+                password: 'krypt0n0rbust'
+              }
+            })
+          }).then(response => response.json())
+            .then(result => {
+              console.log(result);
+            })
+            .catch(console.error);
+
+
+
+
         event.preventDefault()
         console.log('submitted the form')
         setSubmittedSuccessful(true)
