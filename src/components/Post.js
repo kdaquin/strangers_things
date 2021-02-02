@@ -10,7 +10,8 @@ const Posts = () => {
             
           })
         }, [])
-        
+
+
         }
         callState()
     
