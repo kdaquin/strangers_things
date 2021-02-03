@@ -1,4 +1,5 @@
 import {React, useEffect, useState} from 'react';
+import { CreatePost } from './Pages';
 
 const Posts = () => {
     const [posts,setPosts] = useState([]);
@@ -14,6 +15,7 @@ const Posts = () => {
     
     return (
         <div>
+            
             {
                 posts.map((post, index)=>
                     <div className="posts"
