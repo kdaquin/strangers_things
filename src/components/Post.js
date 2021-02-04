@@ -1,5 +1,6 @@
 import {React, useEffect, useState} from 'react';
 import { CreatePost } from './Pages';
+import myToken from './Landing';
 
 const Posts = () => {
 
@@ -51,3 +52,4 @@ const Posts = () => {
 }
 
 export default Posts;
+

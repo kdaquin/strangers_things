@@ -4,9 +4,11 @@ import {
     Switch,
     Route,
     Link,
-    Redirect
+    Redirect,
+    useRouteMatch
   } from "react-router-dom";
 import NavBar from './NavBar';
+
 
 
 const LoginWindow = () => {
@@ -32,13 +34,15 @@ const LoginWindow = () => {
             })
           }).then(response => response.json())
             .then(result => {
-            //   console.log(result);
+              console.log(result);
               setSubmittedSuccessful(result.success)
+              localStorage.setItem('myToken', result.data.token);
+              localStorage.setItem('username',username)
 
             })
             .catch(console.error);
 
-
+            
 
 
         event.preventDefault()
@@ -69,6 +73,7 @@ return (
         <button 
             className="login-sign-up-button"
             // onClick={<SignUp />}
+            onClick={()=> document.getElementById('myModal').style.display = 'grid'}
             >
             Sign up!
         </button>
@@ -84,6 +89,10 @@ return (
 }
 
 const SignUp = () => {
+    const [submittedSucessful, setSubmittedSuccessful] = useState(false)
+    const [username, setUsername] = useState('')
+    const [password, setPassword] = useState('')
+
     return (
     <div id="myModal" className="modal">
     <input className="signup-first-input"
@@ -130,7 +139,7 @@ const Landing = () => {
             <li>Connect with thousands of users</li>
         </ul>
         <LoginWindow />
-        {/* {<SignUp /> } */}
+        {<SignUp /> }
 
     </div>
  )

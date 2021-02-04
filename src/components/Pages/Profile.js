@@ -16,7 +16,7 @@ const Profile = () => {
             <Title/>
             <main>
                 <h2 className="username">
-                    UserName
+                    {localStorage.getItem('username')}
                 </h2>
                 <ProfileNavBar />
             </main>

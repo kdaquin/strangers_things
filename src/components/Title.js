@@ -4,6 +4,7 @@ import NavBar from './NavBar';
 const Title = () => {
     return (
         <div>
+            <h4>{localStorage.getItem('username')}</h4>
             <button className="sign-out">
                 Sign Out
             </button>

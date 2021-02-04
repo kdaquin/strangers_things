@@ -97,7 +97,7 @@ html {
 }
 
 #myModal{
-    display: grid;
+    display: none;
 flex-direction: column;
 justify-content: center;
 border: solid black;
