@@ -187,12 +187,13 @@ top: 56%;
     margin-left: 2px;
 }
 
-/* .home {
-   
-} */
+
 .home-main {
    
 }
 .profile-nav-bar {
     display: flex;
+    justify-content: space-around;
+    box-sizing: content-box;
+    border: 1px solid black;
 }
