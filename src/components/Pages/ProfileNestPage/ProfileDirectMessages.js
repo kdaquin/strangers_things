@@ -4,7 +4,7 @@ const DirectMessages = () => {
 
     return (
         <div>
-            Hello
+            Messages
         </div>
     )
 }

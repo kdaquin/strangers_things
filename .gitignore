@@ -3,4 +3,8 @@ application/logs/*
 
 node_modules
 
+<<<<<<< HEAD
 .eslintcache
+=======
+eslintcache
+>>>>>>> 9b61ec605289786dc464d7b4d5042a82f208c69c
