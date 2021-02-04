@@ -2,6 +2,7 @@ import {React, useEffect, useState} from 'react';
 import { CreatePost } from './Pages';
 
 const Posts = () => {
+
     const [posts,setPosts] = useState([]);
      useEffect( async () => {
             const response = await fetch('https://strangers-things.herokuapp.com/api/2010-LSU-RM-WEB-PT/posts')
@@ -13,6 +14,10 @@ const Posts = () => {
     }, [])
     
     
+
+
+
+        
     return (
         <div>
             
@@ -39,7 +44,7 @@ const Posts = () => {
                     </div>)
             }
 
-        </div>
+         </div>
     )
 
 

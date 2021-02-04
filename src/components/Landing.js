@@ -11,28 +11,55 @@ import NavBar from './NavBar';
 
 const LoginWindow = () => {
     const [submittedSucessful, setSubmittedSuccessful] = useState(false)
+    const [username, setUsername] = useState('')
+    const [password, setPassword] = useState('')
     function authenticate(event) {
         ///check that the user entered stuff first.
         // ajax request to backend
         // backend response will say authenticated or not/
+        
+        
+        fetch('https://strangers-things.herokuapp.com/api/2010-LSU-RM-WEB-PT/users/login', {
+            method: "POST",
+            headers: {
+              'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+              user: {
+                username: username,
+                password: password
+              }
+            })
+          }).then(response => response.json())
+            .then(result => {
+            //   console.log(result);
+              setSubmittedSuccessful(result.success)
+
+            })
+            .catch(console.error);
+
+
+
+
         event.preventDefault()
-        console.log('submitted the form')
-        setSubmittedSuccessful(true)
+        // console.log('submitted the form')
     }
-if (submittedSucessful) {
+if (submittedSucessful === true) {
     return <Redirect to="/home"/>
 }
 return (
     <div className="login">
         
-        <input className="login-email-input"
+        <input id='loginUsername'className="login-email-input"
                 type="text"
-                placeholder="Email or Username">
+                placeholder="Email or Username"
+                onChange={(event)=>setUsername(event.target.value)}>
         </input>
         
-        <input className ="login-password-input"
+        <input id='loginPassword'className ="login-password-input"
                 type="text"
-                placeholder="password">
+                placeholder="password"
+                onChange={(event)=>setPassword(event.target.value)}>
         </input>
         <button className="login-button"
                 onClick={authenticate}>

@@ -3,4 +3,4 @@ application/logs/*
 
 node_modules
 
-eslintcache
+.eslintcache
