@@ -150,8 +150,7 @@ let successful
 
 
 const Landing = () => {
-  
-       
+
  return (
    
     <div className="landing">
