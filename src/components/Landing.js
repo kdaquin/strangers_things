@@ -37,7 +37,6 @@ const LoginWindow = () => {
               console.log(result);
               setSubmittedSuccessful(result.success)
               localStorage.setItem('myToken', result.data.token);
-
             })
             .catch(console.error);
 
@@ -89,30 +88,58 @@ return (
 
 const SignUp = () => {
     const [submittedSucessful, setSubmittedSuccessful] = useState(false)
-    const [username, setUsername] = useState('')
-    const [password, setPassword] = useState('')
+    const [newUsername, setUsername] = useState('')
+    const [newPassword, setNewPassword] = useState('')
+    const [newuserName, setnewuserName] = useState('')
+    function authenticate(event) {
+let successful
+    fetch('https://strangers-things.herokuapp.com/api/2010-LSU-RM-WEB-PT/users/register', {
+        method: "POST",
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          user: {
+            username: newUsername,
+            password: newPassword
+          }
+        })
+      }).then(response => response.json())
+        .then(result => {
+          console.log(result);
+          setSubmittedSuccessful(result.success)        })
+        .catch(console.error);
+        event.preventDefault()
 
+    }
+
+
+    if (submittedSucessful === true) {
+        return <Redirect to="/home"/>
+    }
     return (
+
     <div id="myModal" className="modal">
     <input className="signup-first-input"
         type="text"
-        placeholder="FirstName">
+        placeholder="Username"
+        onChange={(event)=>setUsername(event.target.value)}>
     </input>
     <input className="signup-last-input"
         type="text"
-        placeholder="LastName">
-    </input>
-    <input className="signup-email-input"
-        type="text"
-        placeholder="Email">
+        placeholder="Name"
+        onChange={(event)=>setnewuserName(event.target.value)}>
+
     </input>
     <input className="signup-password-input"
         type="text"
-        placeholder="Password">
+        placeholder="Password"
+        onChange={(event)=>setNewPassword(event.target.value)}>
+
     </input>
     {/* <input type="checkbox" id="above18" value="Are you 18 years of age?">
   <label for="vehicle1"> I Am 18</label><br></br> */}
-    <button className= 'register-button'>Register</button>
+    <button onClick={authenticate}className= 'register-button' >Register</button>
 </div>
     )
 }
