@@ -37,7 +37,7 @@ const LoginWindow = () => {
               console.log(result);
               setSubmittedSuccessful(result.success)
               localStorage.setItem('myToken', result.data.token);
-              localStorage.setItem('username',username)
+              
             
             })
             .catch(console.error);
@@ -123,22 +123,21 @@ const SignUp = () => {
     return (
 
     <div id="myModal" className="modal">
-    <input className="signup-first-input"
-        type="text"
-        placeholder="Username"
-        onChange={(event)=>setUsername(event.target.value)}>
-    </input>
-    <input className="signup-first-name-input"
-        type="text"
-        placeholder="First Name"
-        onChange={(event)=>setFirstName(event.target.value)}>
+        <input className="signup-first-name-input"
+            type="text"
+            placeholder="First Name"
+            onChange={(event)=>setFirstName(event.target.value)}>
 
     </input>
     <input className="signup-last-name-input"
         type="text"
         placeholder="Last Name"
         onChange={(event)=>setLastName(event.target.value)}>
-
+    </input>
+    <input className="signup-first-input"
+        type="text"
+        placeholder="Username"
+        onChange={(event)=>setUsername(event.target.value)}>
     </input>
     <input className="signup-password-input"
         type="text"
