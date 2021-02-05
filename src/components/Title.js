@@ -3,12 +3,14 @@ import NavBar from './NavBar';
 
 const Title = () => {
     return (
-        <div>
-            <h4>{localStorage.getItem('username')}</h4>
+        <div className='title'>
+            <div className="username-sign-out">
+            <h4 className="username">{localStorage.getItem('username')}</h4>
             <button className="sign-out">
                 Sign Out
             </button>
-            <h1 className = "title">
+            </div>
+            <h1>
                 Stranger's Things
             </h1>
             <NavBar/>
