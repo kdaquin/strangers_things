@@ -160,8 +160,7 @@ const SignUp = () => {
 
 
 const Landing = () => {
-  
-       
+
  return (
    
     <div className="landing">

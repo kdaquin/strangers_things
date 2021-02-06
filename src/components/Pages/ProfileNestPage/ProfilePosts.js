@@ -1,17 +1,29 @@
 import {React, useEffect, useState} from 'react';
+const myToken = localStorage.getItem('myToken')
 
 const ProfilePost = () => {
     const [posts,setPosts] = useState([]);
-    useEffect( async () => {
-        const response = await fetch('https://strangers-things.herokuapp.com/api/2010-LSU-RM-WEB-PT/posts')
-        const data = await response.json();
-        console.log(data)
-        setPosts(data.data.posts)
-
     
-}, [])
+    const handleDelete = async (postIdToDelete) => {
+        const response = await fetch(`https://strangers-things.herokuapp.com/api/2010-LSU-RM-WEB-PT/posts/${postIdToDelete}`)
+        const data = await response.json()
+        console.log('delete',data)
+    }
 
+    useEffect( async () => {
 
+fetch('https://strangers-things.herokuapp.com/api/2010-LSU-RM-WEB-PT/users/me', {
+  headers: {
+    'Content-Type': 'application/json',
+    'Authorization': `Bearer ${myToken}`
+  },
+}).then(response => response.json())
+  .then(result => {
+    console.log(result);
+    setPosts(result.data.posts)
+  })
+  .catch(console.error);
+    }, [])
 return (
     
     <div>
@@ -35,7 +47,9 @@ return (
                     <p className="post-location">
                         {post.location}
                     </p>
-
+                    <button type='button'
+                             className="delete-button" 
+                             onClick={() => handleDelete(post.data._id)}>Delete</button>
             </div>)
             
        }
