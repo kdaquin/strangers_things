@@ -5,12 +5,22 @@ const ProfilePost = () => {
     const [posts,setPosts] = useState([]);
     
     const handleDelete = async (postIdToDelete) => {
-        const response = await fetch(`https://strangers-things.herokuapp.com/api/2010-LSU-RM-WEB-PT/posts/${postIdToDelete}`)
+        const response = await fetch(`https://strangers-things.herokuapp.com/api/2010-LSU-RM-WEB-PT/posts/${postIdToDelete}`, {
+            method: "DELETE",
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${myToken}`
+            }
+        })
         const data = await response.json()
-        console.log('delete',data)
+        console.log('delete',data);
+        if(data) {
+            const newPosts = posts.filter(post => post._id !== postIdToDelete);
+            setPosts(newPosts)
+        }
     }
 
-    useEffect( async () => {
+  useEffect( async () => {
 
 fetch('https://strangers-things.herokuapp.com/api/2010-LSU-RM-WEB-PT/users/me', {
   headers: {
@@ -49,7 +59,7 @@ return (
                     </p>
                     <button type='button'
                              className="delete-button" 
-                             onClick={() => handleDelete(post.data._id)}>Delete</button>
+                             onClick={() => handleDelete(post._id)}>Delete</button>
             </div>)
             
        }
