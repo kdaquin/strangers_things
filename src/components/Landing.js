@@ -15,6 +15,7 @@ const LoginWindow = () => {
     const [submittedSucessful, setSubmittedSuccessful] = useState(false)
     const [username, setUsername] = useState('')
     const [password, setPassword] = useState('')
+    const [id, setId] = useState('')
     function authenticate(event) {
         ///check that the user entered stuff first.
         // ajax request to backend
@@ -37,6 +38,7 @@ const LoginWindow = () => {
               console.log(result);
               setSubmittedSuccessful(result.success)
               localStorage.setItem('myToken', result.data.token);
+
               
             
             })

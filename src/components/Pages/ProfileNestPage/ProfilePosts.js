@@ -8,10 +8,6 @@ const ProfilePost = () => {
         console.log(data)
         setPosts(data.data.posts)
 
-        if (data.data.posts.isAuthor) {
-            posts.map((post, index) =>
-            <div key={index}>{post.title}</div>)
-        }
     
 }, [])
 
