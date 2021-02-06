@@ -5,7 +5,7 @@ import {
     Redirect
   } from "react-router-dom";
  let signOut = () => {
-    // localStorage.removeItem('myToken')
+    localStorage.removeItem('myToken')
     console.log('signedout')
     document.location.href="/";
   }

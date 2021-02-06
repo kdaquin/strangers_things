@@ -16,7 +16,7 @@ const ProfilePost = () => {
     
 // }, [])
 
-    useEffect( async () => {
+  useEffect( async () => {
 
 fetch('https://strangers-things.herokuapp.com/api/2010-LSU-RM-WEB-PT/users/me', {
   headers: {
