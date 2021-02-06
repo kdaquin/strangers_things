@@ -22,10 +22,24 @@ useEffect( async () => {
 
 
 
+
+
     return (
-        <div>
-           Send Message
-        </div>
+     <div class ="message">
+        <input type="text"
+            placeholder="Which post would you like to message?">
+        </input>
+        <input type="text"
+            placeholder="Subject">
+        </input>
+        <input type="text"
+            placeholder="Message:">
+        </input>
+        <button>
+            Send Message
+        </button>
+
+    </div>
     )
 
 }
