@@ -4,11 +4,11 @@ import {
     Switch,
     Route,
     Link,
-    Redirect
+    Redirect,
+    useRouteMatch
   } from "react-router-dom";
 import NavBar from './NavBar';
 
-let myToken = localStorage.getItem('myToken');
 
 
 const LoginWindow = () => {
@@ -37,10 +37,12 @@ const LoginWindow = () => {
               console.log(result);
               setSubmittedSuccessful(result.success)
               localStorage.setItem('myToken', result.data.token);
+              
+            
             })
             .catch(console.error);
 
-
+            
 
 
         event.preventDefault()
@@ -90,9 +92,10 @@ const SignUp = () => {
     const [submittedSucessful, setSubmittedSuccessful] = useState(false)
     const [newUsername, setUsername] = useState('')
     const [newPassword, setNewPassword] = useState('')
-    const [newuserName, setnewuserName] = useState('')
+    const [firstName, setFirstName] = useState('')
+    const [lastName, setLastName] = useState('')
     function authenticate(event) {
-let successful
+
     fetch('https://strangers-things.herokuapp.com/api/2010-LSU-RM-WEB-PT/users/register', {
         method: "POST",
         headers: {
@@ -120,16 +123,21 @@ let successful
     return (
 
     <div id="myModal" className="modal">
+        <input className="signup-first-name-input"
+            type="text"
+            placeholder="First Name"
+            onChange={(event)=>setFirstName(event.target.value)}>
+
+    </input>
+    <input className="signup-last-name-input"
+        type="text"
+        placeholder="Last Name"
+        onChange={(event)=>setLastName(event.target.value)}>
+    </input>
     <input className="signup-first-input"
         type="text"
         placeholder="Username"
         onChange={(event)=>setUsername(event.target.value)}>
-    </input>
-    <input className="signup-last-input"
-        type="text"
-        placeholder="Name"
-        onChange={(event)=>setnewuserName(event.target.value)}>
-
     </input>
     <input className="signup-password-input"
         type="text"
@@ -159,10 +167,15 @@ const Landing = () => {
             Stranger's Things
         </h1>
         <ul className="title-list">
+           
             <li>Buy/Sell Items right away</li>
             <li>Post or Find job oppurtunities</li>
             <li>Connect with thousands of users</li>
+            
         </ul>
+        <h3 className="title-message">
+            Hello! Welcome to Stranger's Things. Sign in or Register to begin.
+            </h3>
         <LoginWindow />
         {<SignUp /> }
 

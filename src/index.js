@@ -25,7 +25,7 @@ const App = () => {
         <Home />
         </Route>
         <Route path ='/createpost'>
-          { <CreatePost /> }
+          { <CreatePost  /> }
         </Route>
         <Route exact path ='/profile'>
           <Profile />

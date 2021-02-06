@@ -1,6 +1,17 @@
 import {React, useEffect, useState} from 'react';
 import { CreatePost } from './Pages';
 
+
+
+const Delete = () => {
+    
+
+}
+
+
+
+
+
 const Posts = () => {
 
     const [posts,setPosts] = useState([]);
@@ -9,17 +20,69 @@ const Posts = () => {
             const data = await response.json();
             console.log(data)
             setPosts(data.data.posts)
-        
+    
         
     }, [])
     
-    
+//     const handleDelete = async (postIdToDelete) => {
+//         const response = await fetch(`https://strangers-things.herokuapp.com/api/2010-LSU-RM-WEB-PT/posts/${postIdToDelete}`,{
+//             method: 'DELETE',
 
 
+//         })
+//         const data = await response.json()
+//         if(data) {
+//             const newPosts = posts.filter(post => post.id !== postIdToDelete)
+//             setPosts(newPosts)
+//         }
+// }
+    if (localStorage.getItem('searchParam')){
+console.log('render all')
+ 
+let filteredPosts = posts.filter(post => post.description.includes(localStorage.getItem('searchParam')) || post.location.includes(localStorage.getItem('searchParam')) || post.author.username.includes(localStorage.getItem('searchParam')) || post.title.includes(localStorage.getItem('searchParam')))
 
+
+return (
+    <div className='post-page'>
         
+        {
+            filteredPosts.map((post, index)=>
+                <div className="posts"
+                    key ={index}>
+                         <h2 className="posts-title">
+                              {post.title}
+                        </h2>
+                        <p className="posts-description"> 
+                            {post.description}
+                        </p>
+                        
+                        <p className="post-price"> 
+                            {post.price}
+                        </p>
+                        <p className="post-location">
+                            Location: { post.location}
+                        </p>
+                        <p className="deliver">
+                           { post.willDeliver ? 'Will Deliver': 'Pick Up Only'}
+                        </p>
+                        <h3 className="post-username">
+                            {post.author.username}
+                        </h3>
+                    {/* <button type='button'
+                            className="delete-button"
+                            onClick={handleDelete}>
+                                Delete
+                    </button> */}
+                </div>)
+        }
+
+     </div>
+)
+
+    } else {
+
     return (
-        <div>
+        <div className='post-page'>
             
             {
                 posts.map((post, index)=>
@@ -31,23 +94,32 @@ const Posts = () => {
                             <p className="posts-description"> 
                                 {post.description}
                             </p>
-                            <h3 className="post-username">
-                                {post.author.username}
-                            </h3>
+                            
                             <p className="post-price"> 
                                 {post.price}
                             </p>
                             <p className="post-location">
-                                {post.location}
+                                Location: { post.location}
                             </p>
-
+                            <p className="deliver">
+                               { post.willDeliver ? 'Will Deliver': 'Pick Up Only'}
+                            </p>
+                            <h3 className="post-username">
+                                {post.author.username}
+                            </h3>
+                        {/* <button type='button'
+                                className="delete-button"
+                                onClick={handleDelete}>
+                                    Delete
+                        </button> */}
                     </div>)
             }
 
          </div>
     )
-
+        }
 
 }
 
 export default Posts;
+

@@ -6,12 +6,13 @@ import {
   } from "react-router-dom";
 const Title = () => {
     return (
-        <div>
-            <button className="sign-out"
-            onClick={()=> window.location.href = "/index.html" }>
+        <div className='title'>
+            <div className="username-sign-out">
+            <button className="sign-out">
                 Sign Out
             </button>
-            <h1 className = "title">
+            </div>
+            <h1>
                 Stranger's Things
             </h1>
             <NavBar/>

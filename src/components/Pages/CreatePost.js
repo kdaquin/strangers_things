@@ -1,29 +1,35 @@
 import {React, useState, useEffect} from 'react';
 import Title from '../Title';
-
-const CreatePost = ({posts, setPosts}) => {
+const myToken = localStorage.getItem('myToken')
+console.log(myToken)
+const CreatePost = () => {
 
     const [title, setTitle] = useState([]);
-    const [body, setBody] = useState([]);
+    const [description, setDescription] = useState([]);
+    const [price, setPrice] = useState([])
 
     const handleSubmit = async (event) => {
     event.preventDefault();
-    console.log('title, body',title, body);
     const response = await fetch('https://strangers-things.herokuapp.com/api/2010-LSU-RM-WEB-PT/posts', {
         method: 'POST',
         headers: {
-            'Content-type': 'Application/json',
+            'Content-type':'application/json',
+            'Authorization':`Bearer ${myToken}`
         },
         body: JSON.stringify({
-            title,
-            body
+            post: {
+            description: description,
+            title: title,
+            price: price
+            }
         })
     })
     const data = await response.json();
     console.log('data',data);
-    setPosts([data, ...posts]);
+    
     setTitle('')
-    setBody('')
+    setDescription('')
+    setPrice('')
 }
 
 
@@ -40,8 +46,13 @@ const CreatePost = ({posts, setPosts}) => {
                 </input>
                 <input type='text' 
                         placeholder="description" 
-                        value={body} 
-                        onChange={(event) => setBody(event.target.value)}>
+                        value={description} 
+                        onChange={(event) => setDescription(event.target.value)}>
+                 </input>
+                <input type='text' 
+                        placeholder="price" 
+                        value={price} 
+                        onChange={(event) => setPrice(event.target.value)}>
                  </input>
                 <button type="submit" 
                         className="submit-button">
