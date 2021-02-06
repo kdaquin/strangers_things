@@ -26,6 +26,7 @@ const NavBar = () => {
                         type="text" 
                         placeholder="Search.." 
                         name="search">
+                        
                 </input>
                 <button className='searchButton' onClick={searchFunc}>Search</button>
             </nav>

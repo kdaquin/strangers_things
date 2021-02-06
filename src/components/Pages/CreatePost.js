@@ -7,6 +7,7 @@ const CreatePost = () => {
     const [title, setTitle] = useState([]);
     const [description, setDescription] = useState([]);
     const [price, setPrice] = useState([])
+    const [delivery, setDelivery] = useState(true)
 
     const handleSubmit = async (event) => {
     event.preventDefault();
@@ -20,7 +21,8 @@ const CreatePost = () => {
             post: {
             description: description,
             title: title,
-            price: price
+            price: price,
+            willDeliver: delivery
             }
         })
     })
@@ -30,6 +32,7 @@ const CreatePost = () => {
     setTitle('')
     setDescription('')
     setPrice('')
+    // setDelivery(false) needs work on resetting check
 }
 
 
@@ -37,29 +40,46 @@ const CreatePost = () => {
     return (
         <div>
             <Title />
-
-            <h2>Create a Post </h2>
-            <form onSubmit={handleSubmit}>
-                <input type='text' 
+            <h2 className="create-title">
+                Create a Post 
+            </h2>
+            <div className="create-post">
+            
+            <form className="create-post-form"
+                    onSubmit={handleSubmit}>
+                <input  className="create-post-title"
+                        type='text' 
                         placeholder="title" 
                         value={title} 
                         onChange={(event) => setTitle(event.target.value)}>
                 </input>
-                <input type='text' 
+                <input  className="create-post-description"
+                        type='text' 
                         placeholder="description" 
                         value={description} 
                         onChange={(event) => setDescription(event.target.value)}>
                  </input>
-                <input type='text' 
+                <input  className="create-post-price"
+                        type='text' 
                         placeholder="price" 
                         value={price} 
                         onChange={(event) => setPrice(event.target.value)}>
                  </input>
+                 
+                 <input id="create-post-delivery"
+                        type ='checkbox'
+                        value = {delivery}
+                        onClick={(event)=> setDelivery(event.target.value)}>
+                            
+                        </input>
+                    
                 <button type="submit" 
                         className="submit-button">
                         submit
                 </button>
+
             </form>
+            </div>
         </div>
     )
 
