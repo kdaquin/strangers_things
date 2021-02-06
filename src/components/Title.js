@@ -8,7 +8,7 @@ const Title = () => {
     return (
         <div>
             <button className="sign-out"
-            onClick={()=> window.location.href = "/index.html"}>
+            onClick={()=> window.location.href = "/index.html" }>
                 Sign Out
             </button>
             <h1 className = "title">
@@ -16,7 +16,6 @@ const Title = () => {
             </h1>
             <NavBar/>
             <hr></hr>
-
 
 
 
