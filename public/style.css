@@ -21,9 +21,7 @@ html {
     flex-direction: column;
     float: right;
 }
-.username {
 
-}
 .title-list {
    grid-column: 1;
    grid-row: 2;
@@ -184,6 +182,12 @@ top: 56%;
     gap: 10px 10px;
 
 }
+.post-username {
+    color: blue;
+}
+.post-price {
+    color: green;
+}
 .posts {
     border: 1px solid black;
     height: 400px;
@@ -247,4 +251,40 @@ top: 56%;
     grid-column: 2;
     grid-row: 5;
     height: 30px;
+}
+.profile-my-post {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    gap: 10px 10px;
+
+}
+.delete-button {
+    background-color: red;
+    height: 30px;
+    border-radius: 20px;
+}
+.direct-message {
+    box-sizing: border-box;
+    border: 1px solid black;
+    display: grid;
+    grid-template-columns: 0.5fr 1.5fr 0.5fr;
+    grid-template-rows: 0.1fr 2.2fr;
+    gap: 4px 4px;
+    height: 150px;
+    text-align: center;
+    background-color: white;
+}
+.message-title{
+    grid-column: 2;
+    grid-row: 1;
+}
+.message-description{
+    grid-column: 2;
+    grid-row: 2;
+}
+.message-username{
+    grid-column: 1;
+    grid-row: 1;
+    color: blue;
 }

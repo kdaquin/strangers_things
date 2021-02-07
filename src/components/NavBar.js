@@ -6,7 +6,7 @@ import {
     Link
   } from "react-router-dom";
 
-let searchFunc = () => {
+const searchFunc = () => {
 console.log(document.getElementById('search').value)
 localStorage.setItem('searchParam', document.getElementById('search').value)
 window.location.reload()
