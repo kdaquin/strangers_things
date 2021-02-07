@@ -1,17 +1,21 @@
-import React, {useState} from 'react';
+import React from 'react';
 import {
     BrowserRouter as Router,
-    Switch,
-    Route,
     Link
   } from "react-router-dom";
 
 const searchFunc = () => {
-console.log(document.getElementById('search').value)
-localStorage.setItem('searchParam', document.getElementById('search').value)
-window.location.reload()
+    
+    localStorage.setItem('searchParam', document.getElementById('search').value)
+    window.location.reload()
 }
-setTimeout(function(){ localStorage.removeItem('searchParam') }, 1500);
+
+
+setTimeout(function()  { 
+    
+    localStorage.removeItem('searchParam') 
+    
+}, 1500);
 
 const NavBar = () => {
     return (

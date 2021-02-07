@@ -1,10 +1,7 @@
 import React from 'react';
 import NavBar from './NavBar';
-import {
-    BrowserRouter as Router,
-    Redirect
-  } from "react-router-dom";
- let signOut = () => {
+
+ const signOut = () => {
     localStorage.removeItem('myToken')
     console.log('signedout')
     document.location.href="/";

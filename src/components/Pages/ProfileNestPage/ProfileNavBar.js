@@ -37,7 +37,7 @@ function Topics() {
       <nav className="profile-nav-bar">
         <Link to={`${url}/mypost`}>My Posts</Link>
         <Link to={`${url}/directmessages`}>Direct Messages</Link>
-        <Link to={`${url}/savedpost`}>Send Direct Messages</Link>
+        <Link to={`${url}/savedpost`}>Saved Posts</Link>
       </nav>
       <Switch>
         <Route exact path={path}>
