@@ -151,9 +151,18 @@ const Landing = () => {
         </h1>
         <ul className="title-list">
            
-            <li>Buy/Sell Items right away</li>
-            <li>Post or Find job oppurtunities</li>
-            <li>Connect with thousands of users</li>
+            <li>
+            <span className="material-icons">shopping_cart</span>
+            Buy/Sell Items right away
+            </li>
+            <li>
+              <span className="material-icons">search</span>
+              Post or Find job oppurtunities
+            </li>
+            <li>
+            <span className="material-icons">group</span>
+            Connect with thousands of users
+            </li>
             
         </ul>
         <h3 className="title-message">
