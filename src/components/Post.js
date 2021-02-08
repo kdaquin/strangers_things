@@ -1,13 +1,7 @@
 import {React, useEffect, useState} from 'react';
 
 const myToken = localStorage.getItem('myToken');
-
-
-let postId ;
-
-
-
-
+let postId;
 
 
 let messageSubmitHelper = () => {
@@ -31,7 +25,6 @@ let messageSubmitHelper = () => {
         .catch(console.error);
 
 }
-
 
 
 const Posts = () => {
@@ -76,37 +69,37 @@ const Posts = () => {
                 
                 {
                     filteredPosts.map((post, index)=>
-                        <div className="posts"
-                            key ={index}>
-                                <h2 className="posts-title">
-                                    {post.title}
-                                </h2>
-                                <p className="posts-description"> 
-                                    {post.description}
-                                </p>
-                                
-                                <p className="post-price"> 
-                                    {post.price}
-                                </p>
-                                <p className="post-location">
-                                    Location: { post.location}
-                                </p>
-                                <p className="deliver">
-                                { post.willDeliver ? 'Will Deliver': 'Pick Up Only'}
-                                </p>
-                                <h3 className="post-username">
-                                    {post.author.username}
-                                </h3>
-                                <button type='button'
-                                        className="message-button"
-                                        onClick={()=> {postId = post._id; 
-                                            const p = document.createElement('h3');
-                                            p.innerText = `Sending a mesage to ${post.author.username}`;
-                                            document.querySelector('.modal').appendChild(p);
-                                        return document.getElementById('messageModal').style.display = "grid"}}>
+                <div className="posts"
+                     key ={index}>
+                        <h2 className="posts-title">
+                            {post.title}
+                        </h2>
+                        <p className="posts-description"> 
+                            {post.description}
+                        </p>
+                    
+                        <p className="post-price"> 
+                            {post.price}
+                        </p>
+                        <p className="post-location">
+                             Location: { post.location}
+                        </p>
+                        <p className="deliver">
+                        { post.willDeliver ? 'Will Deliver': 'Pick Up Only'}
+                        </p>
+                        <h3 className="post-username">
+                            {post.author.username}
+                        </h3>
+                        <button type='button'
+                            className="message-button"
+                            onClick={()=> {postId = post._id; 
+                            const p = document.createElement('h3');
+                            p.innerText = `Sending a mesage to ${post.author.username}`;
+                            document.querySelector('.modal').appendChild(p);
+                                return document.getElementById('messageModal').style.display = "grid"}}>
                                             Message User
-                                </button>
-                        </div>)
+                        </button>
+                     </div>)
                 }
 
             </div>
@@ -133,11 +126,6 @@ const Posts = () => {
                         onClick={messageSubmitHelper}>
                     Message</button>
             </div>
-
-
-
-
-
 
             {
                 posts.map((post, index)=>
